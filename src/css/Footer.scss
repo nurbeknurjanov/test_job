@@ -1,0 +1,131 @@
+@import "mixins";
+
+footer > div{
+  z-index: 1;
+  position: relative;
+}
+footer{
+  position: relative;
+  background: $footerBackground;
+  color:white;
+  a{
+    color:white;
+  }
+
+
+  hr{
+    border-color: $footerGrayColor;
+  }
+
+  .copyright{
+    padding: 10px 0;
+    color: $footerGrayColor;
+    font-size: 0.8em;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile{
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+
+
+    & > *{
+      margin: 5px 0;
+
+      &:nth-child(1){
+        flex-basis: 100%;
+      }
+      @include mobile{
+        &:nth-child(1){
+          order: 2;
+        }
+        &:nth-child(2){
+          order: 3;
+        }
+        &:nth-child(3){
+          order: 1;
+        }
+      }
+    }
+
+
+
+
+    svg{
+      margin: 0 5px;
+    }
+  }
+
+  & ul{
+    padding: 0;
+    list-style: none;
+  }
+
+  & > div > ul{
+    display: flex;
+    justify-content: space-between;
+    & > li:nth-child(1){
+      flex-grow: 3;
+    }
+    & > li:nth-child(1), & > li:nth-child(2), & > li:nth-child(3){
+      display: none;
+    }
+    li{
+      flex-grow: 1;
+      flex-basis: 10%;
+    }
+
+    ul{
+      list-style: none;
+      flex-direction: column;
+      line-height: 1.7em;
+      li:first-child{
+        color: $footerGrayColor;
+        padding: 20px 0;
+      }
+      li{
+        padding: 10px 0;
+      }
+    }
+
+    li:last-child ul li:last-child{
+      color: $footerYellowColor;
+    }
+
+    @include tablet{
+      flex-direction: column;
+      text-align: center;
+      margin-top: 20px;
+      line-height: inherit;
+      ul li{
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+footer::before{
+  height: 260px;
+  width: 150px;
+  background: url("../images/footer_left.png") right bottom no-repeat;
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -90px;
+}
+footer::after{
+  height: 400px;
+  width: 100px;
+  background: url("../images/footer_right.png") left 0px  no-repeat;
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -200px;
+}
+

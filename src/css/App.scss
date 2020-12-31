@@ -1,0 +1,57 @@
+@import "mixins";
+
+.App {
+  @include textColor;
+}
+
+a{
+  text-decoration: none;
+  @include textColor;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > div{
+    display: flex;
+    justify-content: space-between;
+
+    & > *{
+      margin: 0 20px;
+      & > a{
+        padding: 0 10px;
+      }
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+img{
+  max-width: 100%;
+}
+
+.hidden{
+  display: none;
+}
+
+
+header{
+
+}
+
+.sticky{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: white;
+}
+
+.sticky + .Block1{
+  margin-top: 80px;
+}
+
