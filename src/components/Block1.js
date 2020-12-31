@@ -25,11 +25,10 @@ function Block1() {
                           <img src={require('../images/block1/3.2.png')} className={'img3-2'}/>
                           <img src={require('../images/block1/3.3.png')} className={'img3-3'}/>
                       </div>
-
+                      <img src={require('../images/block1/4.png')} className={'img4'}/>
+                      <img src={require('../images/block1/5.png')} className={'img5'}/>
                   </div>
-{/*
-                  <img src={require('../images/block1/4.png')} className={'img4'}/>
-*/}
+
               </div>
           </CustomContainer>
       </div>

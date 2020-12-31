@@ -39,6 +39,19 @@
           bottom: 100px;
           left: -30px;
         }
+        & > .img4{
+          height: 200px;
+          position: absolute;
+          bottom: 20px;
+          right: 100px;
+          z-index: 1;
+        }
+        & > .img5{
+          height: 200px;
+          position: absolute;
+          bottom: 100px;
+          right: 30px;
+        }
         & > .images-block-middle{
           border: 5px solid blue;
           display: flex;
