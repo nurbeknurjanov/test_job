@@ -3,6 +3,7 @@ $mobile: 640px;
 $tablet: 768px;
 $desktop: 1024px;
 $background: #EB3232;
+$grayColor:#4F4F4F;
 $footerBackground: #1d293f;
 $footerGrayColor: #8C97AC;
 $footerYellowColor: #FFD166;
@@ -34,4 +35,8 @@ $footerYellowColor: #FFD166;
 
 @mixin textColor {
   color: #222;
+}
+
+@mixin textGreyColor {
+  color: $grayColor;
 }

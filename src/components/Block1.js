@@ -17,7 +17,14 @@ function Block1() {
           <CustomContainer maxWidth="md" >
               <div className={'inner'}>
                   <img src={require('../images/block1/1.png')} className={'img1'}/>
-                  <div className={'form-block'}>1</div>
+                  <div className={'form-block'}>
+                      <h1>Psychological care
+                          <br/>
+                          on-demand</h1>
+                      <p>
+                          Speak to a Psychologist, Psychotherapist or Psychiatrist within minutes, 24/7 via our secure video calling App.
+                      </p>
+                  </div>
                   <div className={'images-block'}>
                       <img src={require('../images/block1/2.png')} className={'img2'}/>
                       <div className={'images-block-middle'}>
@@ -28,7 +35,6 @@ function Block1() {
                       <img src={require('../images/block1/4.png')} className={'img4'}/>
                       <img src={require('../images/block1/5.png')} className={'img5'}/>
                   </div>
-
               </div>
           </CustomContainer>
       </div>

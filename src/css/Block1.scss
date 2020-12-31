@@ -1,7 +1,5 @@
 @import "mixins";
 
-
-
 .Block1{
   min-height: 90vh;
   position: relative;
@@ -25,7 +23,15 @@
     & > div{
       &.form-block{
         min-width: 445px;
+        max-width: 445px;
         border: 5px solid red;
+        h1{
+          font-style: normal;
+          color: #333333;
+        }
+        p{
+          @include textGreyColor;
+        }
       }
       &.images-block{
         border: 5px solid orange;
