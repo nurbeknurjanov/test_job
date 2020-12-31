@@ -3,13 +3,67 @@ import '../css/Block1.scss';
 import { makeStyles, withStyles, styled } from '@material-ui/styles';
 import {containerStyle} from "../styles/material_styles";
 import { Container } from '@material-ui/core';
-import phone from '../images/phone.png';
-import slogan from '../images/slogan.png';
-import app_store from '../images/app_store.png';
-import google_pay from '../images/google_pay.png';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
+function ToggleButtons() {
+    const [meet, setMeet] = React.useState('online');
+
+    const handleMeeting = (event, value) => {
+        setMeet(value);
+    };
+
+    return (
+        <ToggleButtonGroup
+            value={meet}
+            exclusive
+            onChange={handleMeeting}
+        >
+            <ToggleButton value="online" color={'secondary'} >
+                Online
+            </ToggleButton>
+            <ToggleButton value="face-to-face" >
+                Face-to-face
+            </ToggleButton>
+        </ToggleButtonGroup>
+    );
+}
 
 const CustomContainer = withStyles(containerStyle)(Container);
+
+const ImagesBlock = ()=>(
+    <div className={'images-block'}>
+        <img src={require('../images/block1/2.png')} className={'img2'}/>
+        <div className={'images-block-middle'}>
+            <img src={require('../images/block1/3.1.png')} className={'img3-1'}/>
+            <img src={require('../images/block1/3.2.png')} className={'img3-2'}/>
+            <img src={require('../images/block1/3.3.png')} className={'img3-3'}/>
+        </div>
+        <img src={require('../images/block1/4.png')} className={'img4'}/>
+        <img src={require('../images/block1/5.png')} className={'img5'}/>
+    </div>
+)
+
+const FormBlock = ()=>(
+    <div className={'form-block'}>
+        <h1>Psychological care
+            <br/>
+            on-demand</h1>
+        <p>
+            Speak to a Psychologist, Psychotherapist or Psychiatrist within minutes, 24/7 via our secure video calling App.
+        </p>
+        <Form/>
+    </div>);
+
+const Form = ()=>{
+
+
+    return <form>
+        <h3>Find a Therapist</h3>
+
+        <ToggleButtons/>
+    </form>;
+}
 
 function Block1() {
   return (
@@ -17,24 +71,8 @@ function Block1() {
           <CustomContainer maxWidth="md" >
               <div className={'inner'}>
                   <img src={require('../images/block1/1.png')} className={'img1'}/>
-                  <div className={'form-block'}>
-                      <h1>Psychological care
-                          <br/>
-                          on-demand</h1>
-                      <p>
-                          Speak to a Psychologist, Psychotherapist or Psychiatrist within minutes, 24/7 via our secure video calling App.
-                      </p>
-                  </div>
-                  <div className={'images-block'}>
-                      <img src={require('../images/block1/2.png')} className={'img2'}/>
-                      <div className={'images-block-middle'}>
-                          <img src={require('../images/block1/3.1.png')} className={'img3-1'}/>
-                          <img src={require('../images/block1/3.2.png')} className={'img3-2'}/>
-                          <img src={require('../images/block1/3.3.png')} className={'img3-3'}/>
-                      </div>
-                      <img src={require('../images/block1/4.png')} className={'img4'}/>
-                      <img src={require('../images/block1/5.png')} className={'img5'}/>
-                  </div>
+                  <FormBlock/>
+                  <ImagesBlock/>
               </div>
           </CustomContainer>
       </div>
