@@ -1,10 +1,10 @@
 import logo from "../../images/logo.png";
 import React, {useEffect} from "react";
 import {projectName} from "../../constants/constants";
-import { makeStyles, withStyles, styled, useTheme } from '@material-ui/styles';
-import { Container } from '@material-ui/core';
-import {ButtonLink} from "../../styles/styled_components";
-import {containerStyle,headerContainerStyle, buttonStyles} from "../../styles/material_styles";
+import { makeStyles, withStyles, styled, useTheme } from '@material-ui/core/styles';
+import { Container, Button } from '@material-ui/core';
+import {ButtonLink, ButtonLinkRed} from "../../styles/styled_components";
+import {headerContainerStyle, buttonStyles} from "../../styles/material_styles";
 import PropTypes from 'prop-types';
 import {
     BrowserRouter as Router,
@@ -14,11 +14,9 @@ import {
 } from "react-router-dom";
 
 
-export default function (props){
-    const HeaderContainer = withStyles(headerContainerStyle)(Container);
-    /*const theme = useTheme();
-    const HeaderContainer = styled(Container)(headerContainerStyle(theme).root);*/
+const HeaderContainer = withStyles(headerContainerStyle)(Container);
 
+export default function (props){
     return <header id='header'>
         <HeaderContainer maxWidth="md" >
             <nav>

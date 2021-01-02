@@ -1,10 +1,14 @@
 import React from 'react';
 import '../css/Block1.scss';
 import { makeStyles, withStyles, styled } from '@material-ui/styles';
-import {containerStyle} from "../styles/material_styles";
-import { Container } from '@material-ui/core';
+import {containerStyle, buttonStyles} from "../styles/material_styles";
+import {Button, Container, useTheme} from '@material-ui/core';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import {Route} from "react-router-dom";
+import { green, orange } from '@material-ui/core/colors';
+
+const MyButton = withStyles(buttonStyles)(Button);
 
 function ToggleButtons() {
     const [meet, setMeet] = React.useState('online');
@@ -19,7 +23,7 @@ function ToggleButtons() {
             exclusive
             onChange={handleMeeting}
         >
-            <ToggleButton value="online" color={'secondary'} >
+            <ToggleButton value="online"  >
                 Online
             </ToggleButton>
             <ToggleButton value="face-to-face" >
@@ -44,16 +48,19 @@ const ImagesBlock = ()=>(
     </div>
 )
 
-const FormBlock = ()=>(
-    <div className={'form-block'}>
+const FormBlock = ()=>{
+    return <div className={'form-block'}>
         <h1>Psychological care
             <br/>
-            on-demand</h1>
+            on-demand
+        </h1>
+        <MyButton color='red' variant='contained' style={{color:'brown'}}>My button</MyButton>
         <p>
             Speak to a Psychologist, Psychotherapist or Psychiatrist within minutes, 24/7 via our secure video calling App.
         </p>
         <Form/>
-    </div>);
+    </div>
+}
 
 const Form = ()=>{
 
@@ -66,6 +73,9 @@ const Form = ()=>{
 }
 
 function Block1() {
+  //const theme = useTheme();
+  //theme.palette.primary.main = green[500];
+
   return (
       <div className='Block1'>
           <CustomContainer maxWidth="md" >

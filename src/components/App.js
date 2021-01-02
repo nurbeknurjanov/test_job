@@ -13,37 +13,43 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import { createMuiTheme, ThemeProvider, MuiThemeProvider } from '@material-ui/core/styles';
+import Checkbox from '@material-ui/core/Checkbox';
+import { green, orange } from '@material-ui/core/colors';
+import { Button } from '@material-ui/core';
+import {theme} from "../styles/material_styles";
 
 
 function App() {
 
-
   return (
-    <div className="App">
+      <MuiThemeProvider theme={theme}>
 
-        <Router>
-            <Header/>
+          <div className="App">
+              <Router>
+                  <Header/>
+                  <Switch>
+                      <Route  exact={true} path="/privacy">
+                          <PrivacyPolicy/>
+                      </Route>
+                      <Route  exact={true} path="/contact">
+                          <Contact/>
+                      </Route>
+                      <Route  exact={true} path="/download">
+                          <Download/>
+                      </Route>
+                      <Route exact={true} path="/">
+                          <Block1/>
+                          <Block2/>
+                      </Route>
 
-            <Switch>
-                <Route  exact={true} path="/privacy">
-                    <PrivacyPolicy/>
-                </Route>
-                <Route  exact={true} path="/contact">
-                    <Contact/>
-                </Route>
-                <Route  exact={true} path="/download">
-                    <Download/>
-                </Route>
-                <Route exact={true} path="/">
-                    <Block1/>
-                    <Block2/>
-                </Route>
+                  </Switch>
+              </Router>
+              <Footer/>
+          </div>
 
-            </Switch>
-        </Router>
+      </MuiThemeProvider>
 
-        <Footer/>
-    </div>
   );
 }
 
