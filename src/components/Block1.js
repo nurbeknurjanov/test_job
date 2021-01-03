@@ -37,7 +37,7 @@ function Field()
                        label="What problem do you have?"
                        variant="outlined"
                        size="small"
-                       helperText="This field is required."
+                       helperText=""
                        required
                        fullWidth
                        error={false}
