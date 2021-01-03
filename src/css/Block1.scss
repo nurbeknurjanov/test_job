@@ -8,7 +8,6 @@
   & .inner{
     position: relative;
     display: flex;
-    @include bordered;
 
     @include tablet{
       flex-direction: column-reverse;
@@ -27,7 +26,6 @@
     }
 
     & > .form-block{
-      border: 1px solid;
       min-width: 445px;
       max-width: 445px;
       @include tablet{
@@ -62,10 +60,14 @@
     }
 
     & > .images-block{
-      border: 1px solid red;
-      min-height: 500px;
       position: relative;
+
+      min-height: 500px;
       width: calc(100% - 445px);
+      @include tablet{
+        min-height: 250px;
+        width: 100%;
+      }
       display: flex;
       justify-content: center;
       background: url("../images/block1/3.merged.png") center top no-repeat;
@@ -74,6 +76,9 @@
         position: absolute;
         bottom: 100px;
         left: -30px;
+        @include tablet{
+          bottom: 0;
+        }
       }
       & > .img3-3{
         height: 80px;
@@ -86,6 +91,9 @@
       }
       & > .img4{
         height: 200px;
+        @include tablet{
+          height: 150px;
+        }
         position: absolute;
         bottom: 20px;
         right: 100px;
@@ -93,6 +101,9 @@
       }
       & > .img5{
         height: 200px;
+        @include tablet{
+          height: 150px;
+        }
         position: absolute;
         bottom: 100px;
         right: 30px;

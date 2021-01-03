@@ -44,7 +44,7 @@ function Field()
                        InputProps={{endAdornment:<InputAdornment position="end">
                                <Button style={{margin: '0px -14px 0 0',
                                    zIndex: 1,
-                                   height: '40px',
+                                   height: '39px',
                                    borderTopLeftRadius:0,
                                    borderBottomLeftRadius:0,
                                    minWidth:'40px',
