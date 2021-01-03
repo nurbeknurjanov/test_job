@@ -66,6 +66,12 @@ export const headerContainerStyle = theme=>{
     return styles;
 };
 
+export const block1ContainerStyle = theme=>{
+    const styles = containerStyle(theme);
+    styles.root.paddingTop = '0px';
+    return styles;
+};
+
 
 export const buttonStyles = {
     root: {

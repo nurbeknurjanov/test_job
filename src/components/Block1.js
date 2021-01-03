@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Block1.scss';
 import { makeStyles, withStyles } from '@material-ui/styles';
-import {containerStyle, buttonStyles} from "../styles/material_styles";
+import {block1ContainerStyle, buttonStyles} from "../styles/material_styles";
 import {Button, Container, useTheme, TextField, InputAdornment, IconButton} from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import ToggleButton from '@material-ui/lab/ToggleButton';
@@ -84,16 +84,12 @@ function ToggleButtons() {
     );
 }
 
-const CustomContainer = withStyles(containerStyle)(Container);
+const CustomContainer = withStyles(block1ContainerStyle)(Container);
 
 const ImagesBlock = ()=>(
     <div className={'images-block'}>
         <img src={require('../images/block1/2.png')} className={'img2'}/>
-        <div className={'images-block-middle'}>
-            <img src={require('../images/block1/3.1.png')} className={'img3-1'}/>
-            <img src={require('../images/block1/3.2.png')} className={'img3-2'}/>
-            <img src={require('../images/block1/3.3.png')} className={'img3-3'}/>
-        </div>
+        <img src={require('../images/block1/3.3.png')} className={'img3-3'}/>
         <img src={require('../images/block1/4.png')} className={'img4'}/>
         <img src={require('../images/block1/5.png')} className={'img5'}/>
     </div>

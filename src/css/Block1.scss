@@ -9,6 +9,9 @@
     position: relative;
     height: 70vh;
     display: flex;
+    @include tablet{
+      flex-direction: column-reverse;
+    }
 
     & > .img1{
       height: 180px;
@@ -47,18 +50,23 @@
       }
     }
 
-
-
     & > .images-block{
       position: relative;
       width: calc(100% - 445px);
       display: flex;
       justify-content: center;
+      background: url("../images/block1/3.merged.png") center top no-repeat;
       & > .img2{
         height: 167px;
         position: absolute;
         bottom: 100px;
         left: -30px;
+      }
+      & > .img3-3{
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        right: 42%;
       }
       & > .img4{
         height: 200px;
@@ -73,34 +81,10 @@
         bottom: 100px;
         right: 30px;
       }
-      & > .images-block-middle{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        width: 200px;
-        & > img{
-          width: 100px;
-          &:first-child{
-            top: -100px;
-            position: absolute;
-          }
-          &:nth-child(2){
-            position: absolute;
-            top: 30px;
-            min-width: 700px;
-            height: calc(100% - 30px);
-          }
-          &:nth-child(3){
-            position: absolute;
-            bottom: 0;
-          }
-        }
-      }
+
     }
   }
+
 
 }
 
