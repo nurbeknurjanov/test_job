@@ -25,13 +25,18 @@
         font-style: normal;
         color: #333333;
       }
-      p{
-        @include textGreyColor;
-      }
       p.hint{
-        color: $veryGrayColor;
+        @include textGreyColor;
         font-size: 14px;
         margin: 5px 0;
+        position: relative;
+        svg{
+          position: absolute;
+        }
+        span{
+          display: block;
+          margin-left: 20px;
+        }
       }
 
       form{
