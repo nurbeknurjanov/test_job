@@ -3,14 +3,16 @@
 .Block1{
   min-height: 90vh;
   position: relative;
-  background: url("../images/Background.png");
+  background: url("../images/Background.png") no-repeat;
 
   & .inner{
     position: relative;
-    height: 70vh;
     display: flex;
+    @include bordered;
+
     @include tablet{
       flex-direction: column-reverse;
+      align-items: center;
     }
 
     & > .img1{
@@ -18,11 +20,20 @@
       position: absolute;
       bottom: 30px;
       left: -60px;
+      display: none;
+      @include tablet{
+        display: none;
+      }
     }
 
     & > .form-block{
+      border: 1px solid;
       min-width: 445px;
       max-width: 445px;
+      @include tablet{
+        min-width: 100%;
+        max-width: 100%;
+      }
       z-index: 1;
       h1{
         font-style: normal;
@@ -51,6 +62,8 @@
     }
 
     & > .images-block{
+      border: 1px solid red;
+      min-height: 500px;
       position: relative;
       width: calc(100% - 445px);
       display: flex;
@@ -67,6 +80,9 @@
         position: absolute;
         bottom: 0;
         right: 42%;
+        @include tablet{
+          display: none;
+        }
       }
       & > .img4{
         height: 200px;

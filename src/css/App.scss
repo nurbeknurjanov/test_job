@@ -21,15 +21,16 @@ nav{
 
     & > *{
       margin: 0 20px;
+      @include mobile {
+        display: none;
+      }
       &:last-child{
         margin-right: 0;
+        display: block !important;
       }
       & > a{
         padding: 0 10px;
       }
-    }
-    @include mobile {
-      display: none;
     }
   }
 }
