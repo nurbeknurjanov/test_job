@@ -132,7 +132,7 @@ const Form = ()=>{
             </span>
         </p>
         <p className='hint'>
-            <span>audio call & messaging</span>
+            &nbsp; &nbsp; &nbsp;<span>audio call & messaging</span>
         </p>
     </form>;
 }

@@ -31,6 +31,7 @@
       @include tablet{
         min-width: 100%;
         max-width: 100%;
+        text-align: center;
       }
       z-index: 1;
       h1{
@@ -43,11 +44,9 @@
         margin: 5px 0;
         position: relative;
         svg{
-          position: absolute;
-        }
-        span{
-          display: block;
-          margin-left: 20px;
+          position: relative;
+          top: 2px;
+          left: -2px;
         }
       }
 
