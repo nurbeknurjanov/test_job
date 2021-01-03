@@ -4,7 +4,6 @@
   min-height: 90vh;
   position: relative;
   background: url("../images/Background.png");
-  overflow: hidden;
 
   & .inner{
     position: relative;
@@ -29,6 +28,12 @@
       p{
         @include textGreyColor;
       }
+      p.hint{
+        color: $veryGrayColor;
+        font-size: 14px;
+        margin: 5px 0;
+      }
+
       form{
         @include whiteCard;
         h3{
@@ -36,7 +41,6 @@
         }
       }
     }
-
 
 
 
@@ -92,6 +96,7 @@
       }
     }
   }
+
 }
 
 

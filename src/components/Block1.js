@@ -1,14 +1,20 @@
 import React from 'react';
 import '../css/Block1.scss';
-import { makeStyles, withStyles, styled } from '@material-ui/styles';
+import { makeStyles, withStyles } from '@material-ui/styles';
 import {containerStyle, buttonStyles} from "../styles/material_styles";
 import {Button, Container, useTheme} from '@material-ui/core';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-import {Route} from "react-router-dom";
 import { green, orange } from '@material-ui/core/colors';
+import styled, {css} from "styled-components";
 
-const MyButton = withStyles(buttonStyles)(Button);
+
+/*const MyButton = withStyles(buttonStyles)(Button);
+<MyButton color='red' variant='contained' style={{color:'brown'}}>My button</MyButton>*/
+
+const P = styled.p`
+    padding: 20px 0;
+`
 
 function ToggleButtons() {
     const [meet, setMeet] = React.useState('online');
@@ -23,7 +29,7 @@ function ToggleButtons() {
             exclusive
             onChange={handleMeeting}
         >
-            <ToggleButton value="online"  >
+            <ToggleButton value="online" >
                 Online
             </ToggleButton>
             <ToggleButton value="face-to-face" >
@@ -54,10 +60,10 @@ const FormBlock = ()=>{
             <br/>
             on-demand
         </h1>
-        <MyButton color='red' variant='contained' style={{color:'brown'}}>My button</MyButton>
-        <p>
+        <P>
             Speak to a Psychologist, Psychotherapist or Psychiatrist within minutes, 24/7 via our secure video calling App.
-        </p>
+        </P>
+
         <Form/>
     </div>
 }
@@ -66,8 +72,9 @@ const Form = ()=>{
 
 
     return <form>
-        <h3>Find a Therapist</h3>
+        <h3 style={{color:'#4F4F4F'}}>Find a Therapist</h3>
 
+        <p className='hint'>Select the type of consultation</p>
         <ToggleButtons/>
     </form>;
 }

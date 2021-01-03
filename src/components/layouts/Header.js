@@ -3,7 +3,6 @@ import React, {useEffect} from "react";
 import {projectName} from "../../constants/constants";
 import { makeStyles, withStyles, styled, useTheme } from '@material-ui/core/styles';
 import { Container, Button } from '@material-ui/core';
-import {ButtonLink, ButtonLinkRed} from "../../styles/styled_components";
 import {headerContainerStyle, buttonStyles} from "../../styles/material_styles";
 import PropTypes from 'prop-types';
 import {

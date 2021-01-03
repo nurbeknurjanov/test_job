@@ -2,32 +2,46 @@ import {createMuiTheme, makeStyles, fade} from "@material-ui/core/styles";
 import {orange, green} from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
-
     overrides: {
-
         MuiButton: {
             root: {
                 /*margin: "10px",
                 padding: "50px"*/
             }
         },
-        MuiToggleButton:{
-            root:{
-                background:"#ff4400",
-                "&:hover": {
-                    "background": "#ff4400"
-                }
+    },
+    palette: {
+        primary: {
+            main: '#48B6E7' ,
+            contrastText:'white'
+        },
+        notActive: {
+            main: '#F2F2F2',
+            dark: '#dfe0e2',
+            contrastText:'#4F4F4F'
+        },
+    },
+});
+theme.overrides.MuiToggleButton = {
+    root:{
+        padding:'4px 30px',
+        fontSize:'12px',
+        textTransform:'none',
+        backgroundColor:theme.palette.notActive.main,
+        color:'#4F4F4F',
+        '&:hover': {
+            backgroundColor:theme.palette.notActive.dark,
+        },
+        '&$selected': {
+            backgroundColor:theme.palette.primary.main,
+            color:'white',
+            '&:hover': {
+                backgroundColor:theme.palette.primary.dark,
             },
         },
     },
-    palette: {
-        /*primary: {
-            main: '#ff4400' ,
-        },*/
-    },
-});
+}
 export {theme};
-//export default theme;
 
 export const containerStyle = theme=>{
     return {
